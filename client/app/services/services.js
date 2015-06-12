@@ -4,14 +4,19 @@ angular.module('shortly.services', [])
 
   // Your code here
   var retrieveLinks = function () {
-
     return $http.get('/api/links');
   };
 
+  var sendLink = function(loc) {
+    return $http.post('/api/links', { data: loc} );
+  };
+
   return {
-    retrieveLinks: retrieveLinks
+    retrieveLinks: retrieveLinks,
+    sendLink: sendLink
   };
 })
+
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
