@@ -2,9 +2,11 @@
 <!-- Your code here -->
   <div>Enter link to shorten:</div>
   <div>
-    <input ng-model="loc"></input>
-    <button ng-click="addLink(loc)">Submit</button>
+  <form name="shortenForm" ng-submit='addLink(loc)'>
+    <input type="url" name="siteurl" ng-model="loc" required />
+    <span ng-show="shortenForm.siteurl.$error.url">Not a valid url</span>
+    <button>Submit</button> <!-- ng-click="addLink(loc)" -->
+  </form>
   </div>
 </div>
-
 

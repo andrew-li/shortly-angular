@@ -6,3 +6,5 @@ angular.module('shortly.shorten', [])
     Links.sendLink(loc).success(function() {});
   };
 });
+
+
