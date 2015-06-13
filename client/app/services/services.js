@@ -8,7 +8,7 @@ angular.module('shortly.services', [])
   };
 
   var sendLink = function(loc) {
-    return $http.post('/api/links', { data: loc} );
+    return $http.post('/api/links', { url: loc} );
   };
 
   return {
