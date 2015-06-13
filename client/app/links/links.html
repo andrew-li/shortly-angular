@@ -5,7 +5,8 @@
   <!-- display links individually -->
 
   <ul>
-    <li ng-repeat="link in data.links">
+    <label>Search by Name<input ng-model="search.title"></label>
+    <li ng-repeat="link in data.links | orderBy:'-visits' | filter:search:strict">  <!-- | filter:'-searchText' -->
       <div> {{link.title}}</div>
       <div>
         <a href="{{link.url}}">{{link.url}}</a>
